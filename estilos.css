@@ -89,3 +89,15 @@ nav ul li {
 .reunion{
     visibility:hidden;
 }
+
+.calendarioFDia{
+    background-color: #006583;
+    border: solid black 2px;
+    cursor: pointer;
+
+}
+.calendarioFDia:hover {
+    background-color: #00455a;
+    border: solid black 4px
+    
+}

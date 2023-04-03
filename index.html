@@ -24,62 +24,32 @@
     </header>
 
 
-    <div class="contaaaeiner">
+    <div class="containers">
+
         <div class="row">
-            <div class="col-3">
+
+            <div class="col-2">
                 <h1>Agregar evento</h1>
                 <div class="formulariAgregar">
 
-                    <select class="form-select" aria-label="Default select example" id="motivo">
-                        <option selected>Motivo</option>
-                        <option value="reunion">Reunion</option>
-                        <option value="cumpleaños">Cumpleaños</option>
-                        <option value="otro">Otro</option>
-                    </select>
-
-                    <div style="visibility:hidden;">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control">
-                            <label for="floatingInput">Motivo de la reunion</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control">
-                            <label for="floatingInput">Duracion</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control">
-                            <label for="floatingInput">Lugar</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control">
-                            <label for="floatingInput">Horario</label>
-                        </div>
-                        <select class="form-select" aria-label="Default select example" id="motivo">
-                            <option selected>Integrantes</option>
-                            <option value="1">Pepe</option>
-                            <option value="2">Juan</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                            <option value="3">Pedro</option>
-                        </select>
-
-
+                    <div id="motivoTitulo" style="text-align: center;">
+                        <h3>Ingrese el motivo</h3>
                     </div>
 
+                    <select class="form-select" aria-label="Default select example" id="motivo"
+                        style="margin-bottom: 20px;">
+                        <option selected>Motivo</option>
+                        <option value="reunion" onclick='fallo("Reunion")'>Reunion</option>
+                        <option value="cumpleaños" onclick='fallo("cumpleaños")'>Cumpleaños</option>
+                        <option value="otro" onclick='fallo("otro")'>Otro</option>
+                    </select>
+                </div>
 
 
-
+                <div style="display: none;" id="reunion">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control">
-                        <label for="floatingInput">Nombre-usuario</label>
+                        <label for="floatingInput">Motivo de la reunion</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control">
@@ -90,18 +60,58 @@
                         <label for="floatingInput">Lugar</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control">
+                        <input type=time class="form-control">
                         <label for="floatingInput">Horario</label>
                     </div>
 
-                    <input type="button" value="Enviar" onclick="fallo()">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Recipient's username"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2" id="personaI">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">@mecon.gov.ar</span>
+                        </div>
+                        <input type="reset" value="Enviar" onclick="sumarIntegrnte()">
+                    </div>
+                    <div class="integrntes">
+                        <ul id="person"></ul>
+                    </div>
+                    <button onclick="publicacion()">Publicar</button>
+                </div>
+
+
+
+
+                <div style="display: none;" id="cumpleaños">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control">
+                        <label for="floatingInput">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control">
+                        <label for="floatingInput">Fecha</label>
+                    </div>
+                </div>
+
+                <div style="display: none;" id="otro">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control">
+                        <label for="floatingInput">Sobe que se trata?</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control">
+                        <label for="floatingInput">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control">
+                        <label for="floatingInput">Fecha</label>
+                    </div>
+                    <input type=time class="form-control">
                 </div>
 
             </div>
 
-
-
-            <div class="col-6 calendario">
+            <div class="col-7 calendario">
                 <h1>Calendario</h1>
                 <div class="conteiner">
                     <div class="row">
@@ -125,105 +135,105 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>1</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>2</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>3</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>4</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>5</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col">
+                        <div class="col calendarioFDia">
                             <h4>6/7</h4>
                             <p>Evento</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>8</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>9</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>10</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>11</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>12</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col">
+                        <div class="col calendarioFDia">
                             <h4>13/14</h4>
                             <p>Evento</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>15</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>16</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>17</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>18</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>19</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col">
+                        <div class="col calendarioFDia">
                             <h4>20/21</h4>
                             <p>Evento</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>22</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>23</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>24</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>25</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-2 calendarioFDia">
                             <h4>26</h4>
                             <p>Evento</p>
                         </div>
-                        <div class="col">
+                        <div class="col calendarioFDia">
                             <h4>27/28</h4>
                             <p>Evento</p>
                         </div>
@@ -250,9 +260,7 @@
 
                 </div>
             </div>
-
-
-
+            
             <div class="col-3">
                 <h1>Proximos eventos</h1>
                 <div class="eventos">
@@ -277,7 +285,9 @@
             </div>
 
         </div>
+
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
